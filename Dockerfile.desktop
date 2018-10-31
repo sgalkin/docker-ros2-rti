@@ -1,0 +1,7 @@
+FROM osrf/ros2:bouncy-desktop
+
+RUN apt-get update && RTI_NC_LICENSE_ACCEPTED=YES apt-get install -q -y \
+    ros-bouncy-rmw-connext-cpp \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN sed -i 's^exec "$@"^source "/opt/rti.com/rti_connext_dds-5.3.1/setenv_ros2rti.bash"\n\0^g' /ros2_entrypoint.sh
