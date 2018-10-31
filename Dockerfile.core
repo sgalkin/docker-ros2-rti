@@ -1,4 +1,4 @@
-FROM osrf/ros2:bouncy-core
+FROM osrf/ros2:bouncy-ros-core
 
 RUN apt-get update && RTI_NC_LICENSE_ACCEPTED=YES apt-get install -q -y \
     ros-bouncy-rmw-connext-cpp \
